@@ -35,8 +35,8 @@ Controller events
 -----------------
 ```
 // Open an alert
-$rootScope('alerts-add', { type: 'danger', message: 'Lorem ipsum', 'dismissible': true });
+$rootScope.$broadcast('alerts-add', { type: 'danger', message: 'Lorem ipsum', 'dismissible': true });
 
 // Close all alerts
-$rootScope('alerts-clear');
+$rootScope.$broadcast('alerts-clear');
 ```

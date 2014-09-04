@@ -32,6 +32,7 @@ closeAll();
 ```
 
 Controller events
+-----------------
 ```
 // Open an alert
 $rootScope('alerts-add', { type: 'danger', message: 'Lorem ipsum', 'dismissible': true });

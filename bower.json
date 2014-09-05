@@ -1,0 +1,24 @@
+{
+  "name": "sw-alerts",
+  "version": "0.0.1",
+  "description": "Alerts support for AngularJS",
+  "keywords": [
+    "alert",
+    "angular"
+  ],
+  "authors": [
+    {
+      "name": "Jakub Burkiewicz",
+      "email": "jakub@burkiewicz.eu"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakubburkiewicz/sw-alerts"
+  },
+  "main": "sw-alerts.js",
+  "dependencies": {
+    "angular": ">=1"
+  }
+}

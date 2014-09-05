@@ -6,6 +6,9 @@ Alerts support for AngularJS
 Installation
 ------------
 ```
+bower install sw-alerts --save
+```
+```
 angular.module('myModule', ['sw.alerts']);
 ```
 

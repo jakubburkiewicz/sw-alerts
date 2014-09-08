@@ -17,7 +17,7 @@ angular.module('sw.alerts', []).
   }). // /end Alerts constants
 
   /* Alert Service */
-  service('AlertService', function() {
+  service('AlertService', ['$timeout', function() {
     return {
 
       /**
@@ -35,6 +35,15 @@ angular.module('sw.alerts', []).
           message: message,
           dismissible: dismissible
         });
+
+        if(dismissible == 'auto') {
+          var alertIndex = this.alerts.length - 1;
+          var scope = this;
+
+          $timeout(function() {
+            scope.close(alertIndex);
+          }, 2000);
+        }
       }, // /end add
 
       /**
@@ -56,7 +65,7 @@ angular.module('sw.alerts', []).
       } // /end clear
 
     };
-  }). // /end Alert Service
+  }]). // /end Alert Service
 
 
   /* Alert Controller */

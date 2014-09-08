@@ -26,8 +26,8 @@ angular.module('sw.alerts', []).
        * @param message (String)
        * @returns void
        */
-      add: function(type, message, dismissible) {
-        if(this.alerts === undefined)
+      add: function(type, message, dismissible, single) {
+        if(this.alerts === undefined || single !== undefined)
           this.alerts = [];
 
         this.alerts.push({
@@ -84,7 +84,7 @@ angular.module('sw.alerts', []).
      * Add alert event handling
      */
     $rootScope.$on('alerts-add', function(event, args) {
-      $scope.open(args.type, args.message, args.dismissible);
+      $scope.open(args.type, args.message, args.dismissible, $scope.single);
     }); // /end alerts-add
 
     /**
@@ -103,7 +103,10 @@ angular.module('sw.alerts', []).
 
       restrict: 'E',
       replace: true,
-      template: '<div class="alerts" ng-if="alerts"><sw-alert ng-repeat="alert in alerts"></sw-alert></div>'
+      template: '<div class="alerts" ng-if="alerts"><sw-alert ng-repeat="alert in alerts"></sw-alert></div>',
+      link: function(scope, element, attrs) {
+        scope.single = attrs.single;
+      }
 
     };
   }). // /end sw-alerts directive

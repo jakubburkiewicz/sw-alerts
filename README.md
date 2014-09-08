@@ -21,6 +21,13 @@ Just additionally. You can use your own elements/directives with ng-repeat or An
 <sw-alert></sw-alert>
 ```
 
+Directive attributes
+--------------------
+```
+// 'single' allows to show only one alert a a time
+<sw-alerts single></sw-alerts>
+```
+
 Controller methods
 ------------------
 ```

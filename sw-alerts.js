@@ -84,7 +84,7 @@ angular.module('sw.alerts', []).
      * Add alert event handling
      */
     $rootScope.$on('alerts-add', function(event, args) {
-      $scope.open(args.type, args.message);
+      $scope.open(args.type, args.message, args.dismissible);
     }); // /end alerts-add
 
     /**

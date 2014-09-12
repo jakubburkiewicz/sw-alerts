@@ -107,7 +107,8 @@ angular.module('sw.alerts', []).
      * Clear alerts set on change router state
      */
     $rootScope.$on('$locationChangeStart', function() {
-      $scope.closeAll();
+      if(AlertService.alerts && AlertService.alerts.length > 0)
+        $scope.closeAll();
     }); // /end $locationChangeStart
 
   }]). // /end Alert Controller

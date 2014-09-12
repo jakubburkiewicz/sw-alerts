@@ -69,7 +69,7 @@ angular.module('sw.alerts', []).
 
 
   /* Alert Controller */
-  controller('AlertController', ['$scope', '$rootScope', 'AlertService', 'ALERTS', function($scope, $rootScope, AlertService, ALERTS) {
+  controller('AlertController', ['$scope', '$rootScope', '$location', 'AlertService', 'ALERTS', function($scope, $rootScope, $location, AlertService, ALERTS) {
 
     /**
      * Open alert
@@ -102,6 +102,13 @@ angular.module('sw.alerts', []).
     $rootScope.$on('alerts-clear', function(event) {
       $scope.closeAll();
     }); // /end alerts-clear
+
+    /**
+     * Clear alerts set on change router state
+     */
+    $rootScope.$on('$locationChangeStart', function() {
+      $scope.closeAll();
+    }); // /end $locationChangeStart
 
   }]). // /end Alert Controller
 

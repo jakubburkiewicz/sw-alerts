@@ -17,7 +17,7 @@ angular.module('sw.alerts', []).
   }). // /end Alerts constants
 
   /* Alert Service */
-  service('AlertService', ['$timeout', function() {
+  service('AlertService', ['$timeout', function($timeout) {
     return {
 
       /**
